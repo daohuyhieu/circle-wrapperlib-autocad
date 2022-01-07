@@ -1,0 +1,41 @@
+// Circle.idl : IDL source for Circle
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Circle.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(f0455ab6-7121-4973-b07c-c5ceafc0c022),
+	version(1.0),
+]
+library CircleLib
+{
+	importlib("stdole32.tlb"); 
+	importlib("stdole2.tlb");
+	importlib("D:\Application\Autodesk\ObjectARX_for_AutoCAD_2021_Win_64bit_dlm\inc-x64\axdb24enu.tlb");
+	[
+		object,
+		uuid(36BB03E5-4534-4F21-9C9C-0C09C0DC1CF7),
+		dual,
+		nonextensible,
+		pointer_default(unique)
+	]
+	interface ICircleWrapper : IAcadEntity
+	{
+		[id(1)] HRESULT Blue();
+	};
+	[
+		uuid(37EFB168-E408-4A83-AF0C-5ABC92D358D4),
+		helpstring("CircleWrapper Class")
+	]
+	coclass CircleWrapper
+	{
+		[default] interface ICircleWrapper;
+		[source] interface IAcadObjectEvents;
+	};
+};
+
+import "shobjidl.idl";

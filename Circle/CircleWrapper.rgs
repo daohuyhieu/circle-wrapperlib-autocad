@@ -1,0 +1,26 @@
+HKCR
+{
+	Circle.CircleWrapper.1 = s 'CircleWrapper class'
+	{
+		CLSID = s '{e06d0475-6396-4857-8c49-bfa6591fdbd7}'
+	}
+	Circle.CircleWrapper = s 'CircleWrapper class'
+	{		
+		CurVer = s 'Circle.CircleWrapper.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {e06d0475-6396-4857-8c49-bfa6591fdbd7} = s 'CircleWrapper class'
+		{
+			ProgID = s 'Circle.CircleWrapper.1'
+			VersionIndependentProgID = s 'Circle.CircleWrapper'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{f0455ab6-7121-4973-b07c-c5ceafc0c022}'
+			Version = s '1.0'
+		}
+	}
+}
